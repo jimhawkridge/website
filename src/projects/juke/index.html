@@ -1,0 +1,101 @@
+#define _SUBTITLE_ Jukebox
+#include "../../head.part"
+
+<div class="banner"><img src="images/477.jpeg" alt="ROCK-OLA | 477" width=600 height=112></div>
+<br><br>
+<div style="border: 1px dashed #999; padding: 0 10px; margin-bottom: 25px;">
+  <p>A number of people have expressed an interest in this project so I have released the code as open source <a
+      href="https://github.com/jimhawkridge/rockola477">on GitHub</a>. I have also created a <a
+      href="http://groups.google.com/group/rockola477">Google Group</a> for discussion of all things related to Rock-Ola
+    477 juke boxes and other similar boxes - if you have any questions I suggest posting them there, where they will
+    receive a wider audience, rather than contacting me direct.</p>
+  <p>I'm told that the following Facebook groups are also worth a visit if you happen to use Facebook:
+    &quot;Rock-Ola Jukebox Club&quot;,
+    &quot;Rock-Ola Jukebox Collectors&quot;,
+    &quot;Jukebox Repair Help&quot;.</p>
+</div>
+
+<div class="picture right"><img src="images/box.jpeg" alt="Jukebox pic"></div>
+<p>The Rock-Ola 477 was made during 1978 and 1979 and was amongst the early solid state
+  jukeboxes. When I bought mine in 1999 it had no working features at all. Since then I've repaired all the broken
+  electronics, installed a new PIC based control system, polished it up a bit and most recently created a web
+  based control system so records can be selected from anywhere on the internet - the sound being streamed back to
+  the listener.</p>
+
+<div class="picture left"><a href="labeled-big.html"><img src="images/labeled.jpeg" alt="Jukebox opened up"></a><br>
+  <b>Inside of the jukebox with important parts labeled.</b><br>Click image to zoom in.
+</div>
+
+<p>Most of the faults that were present in the jukebox could be easily repaired.
+  Firstly it simply needed a good clean. I took out the glass and washed it seperatly and
+  scraped the dust off of everything else. I ordered the manuals from
+  <a href="http://www.victoryglass.com">Victory Glass</a> and while I waited for them to arrive I bought a new
+  cartridge and stylus
+  and installed some new flourescent lights. No sound appeared to come out when I tapped the
+  stylus but this was easily traced to a wire inside the amp that leads to the volume control
+  but had been cut. I also stripped down and cleaned the gearbox on the carousel.
+</p>
+<p>When the manuals, which are very comprehensive, arrived I was able to identify
+  the faults that were preventing the mechanism from functioning correctly (a missing
+  relay and a blown transistor) and replaced the parts. Shortly after this one of the
+  power supplies blew and I replaced some parts to get that working again.</p>
+
+<div class="picture right"><img src="images/picboard.jpeg" alt="The PIC Board"><br>
+  <b>The new microcontroller system.</b>
+</div>
+<p>At this stage all that was missing was a way of selecting records. The control
+  system and user interface takes up a number of large boards and unfortunatly use a
+  number of chips that seem to be microprocessors with
+  custom programs or other custom or obselete chips. There is however one
+  chip that performs most of the mechanism
+  control functions. I therefore decided to create a custom control circuit using a PIC16F877 microcontroller using
+  this chip socket as
+  an interface to the mechanism. The PIC is interfaced directly to the keyboard and vacuum flourescent
+  displays in order to by-pass the defective user-interface board. This also allows me to implement some special
+  custom functionality.
+  Which is, of course, where the fun starts!
+</p>
+
+<div class="picture left">
+  <video controls width="320">
+    <source src="juke.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+  </video>
+  <br><b>The jukebox selecting a record</b>
+</div>
+
+<p>After a while I thought it would be fun if I could control the juke from my PC. I'd had a thought in the back
+  of my mind that this
+  might be a useful thing to do while I was making the PIC board so I'd bought out the PIC serial port to a
+  header. I soon had it
+  connected up and was selecting records. I wasn't satisfied with that however - I then thought it would be cool
+  if you could select a record
+  over the internet and listen to the result via a mp3 stream. Well a bit of PHP, Javascript and Icecast hacking
+  later I present:
+  <i>Rock-Ola 477 21st Century Style :-)</i>.
+</p>
+<p>The PHP and Javascript webpage allows the user to select a record which is then submitted to the server as a
+  get request. The server PHP calls a perl script which formats the correct serial command for the jukebox and
+  fires it off. The audio is fead back into the PC from the jukebox's wallbox output and encoded and streamed by
+  Icecast. Now all my friends can sit at home and listen to my juke (if for some reason they actually wanted to do
+  this).</p>
+
+
+<div class="picture"><img src="images/logicboard.jpeg" alt="Logic Board"><br>
+  <b>Logic board with cables from PIC board patched in place of logic chip.</b>
+</div>
+<div class="picture"><img src="images/mech.jpeg" alt="Mechanism"><br>
+  <b>Jukebox mechanism.</b>
+</div>
+<div class="picture"><img src="images/opto.jpeg" alt="Opto Encoder"><br>
+  <b>Opto encoder for selecting correct record</b><br>The microswitch drops into a slot
+  when record #1 is by the gripper.
+</div>
+<div class="picture"><img src="images/cams.jpeg" alt="Selector arms cams"><br>
+  <b>Selector arm cam and microswitches.</b><br>These are used to track the position of the selector arm as it
+  picks up and replaces the record.
+</div>
+
+<p class="date">June 2006</p>
+
+#include "../../tail.part"

@@ -1,0 +1,27 @@
+<html>
+	<head>	
+		<title>Jim Hawkridge</title>
+		<link rel="stylesheet" type="text/css" href="/main.css" />
+	</head>
+	<body>
+		<a id="pagetitle" href="/" ><img src="/images/jim.png" alt="Jim Hawkridge" /></a>
+
+<div class="rbarticle">
+	Well dang it that page don't exist. Click <a href="/">here</a> to head to <a href="/">the index</a> to see if you can find what you are looking for.
+</div>
+
+			<span id="copy">&copy; James Hawkridge 1999-2022</span>
+		</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3900922-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+	</body>
+</html>
