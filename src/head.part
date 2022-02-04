@@ -8,15 +8,7 @@
     <title>Jim Hawkridge - _SUBTITLE_</title>
     <link rel="stylesheet" href="/style.css">
 
-    <!-- 
-        favicon.io 
-        This favicon was generated using the following font:
-
-        - Font Title: Knewave
-        - Font Author: Copyright (c) 2011 by Tyler Finck. All rights reserved.
-        - Font Source: http://fonts.gstatic.com/s/knewave/v12/sykz-yx0lLcxQaSItSq9-trEvlQ.ttf
-        - Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
-    -->
+    <!-- favicon.io - Font: Knewave -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
