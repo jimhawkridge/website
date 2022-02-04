@@ -58,10 +58,6 @@ body {
     min-height: calc(100vh - 250px);
 }
 
-table {
-    margin-top: 20px;
-}
-
 .picture {
     display: inline-block;
     background-color: black;
@@ -129,6 +125,7 @@ a.project {
 a.project div {
     border-radius: 5px;
     padding: 10px;
+    padding-left: 130px;
     min-height: 87px;
     margin-bottom: 8px;
 }
@@ -139,6 +136,7 @@ a.project div:hover {
 
 a.project img {
     float: left;
+    margin-left: -120px;
     margin-right: 10px;
     background-color: black;
     padding: 5px;
@@ -146,7 +144,7 @@ a.project img {
 }
 
 h3 {
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .date {
