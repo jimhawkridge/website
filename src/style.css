@@ -117,6 +117,10 @@ table {
     }
 }
 
+a {
+    color: #99f;
+}
+
 a.project {
     color: #fefefe;
     text-decoration: none;
