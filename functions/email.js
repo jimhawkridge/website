@@ -1,3 +1,14 @@
+function mailResponse(ok, message) {
+    return new Response(
+        JSON.stringify({ ok, message }),
+        {
+            headers: {
+                'content-type': 'application/json;charset=UTF-8',
+            },
+        }
+    )
+}
+
 export async function onRequestPost(context) {
     // Contents of context object
     const {
@@ -13,7 +24,7 @@ export async function onRequestPost(context) {
     const from = requestData.from || '';
     const message = requestData.message || '';
     if (from == '' || message == '') {
-        return new Response('Please put your email address and a message!');
+        return mailResponse(false, 'Please put your email address and a message!');
     }
 
     const payload = {
@@ -41,8 +52,8 @@ export async function onRequestPost(context) {
         body: JSON.stringify(payload)
     });
     if (!response.ok) {
-        return new Response('Error sending!');
+        return mailResponse(false, 'Error sending!');
     }
 
-    return new Response('Sent!');
+    return mailResponse(true, 'Sent!');
 }

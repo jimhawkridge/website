@@ -1,0 +1,39 @@
+#define _SUBTITLE_ Contact me
+#include "../head.part"
+
+<script>
+    function send() {
+        const from = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        const data = {
+            from,
+            message,
+        };
+
+        const response = fetch('/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then((response) => {
+            return response.json();
+        }).then((data) => {
+            document.getElementById('result').innerHTML = data.message;
+            if (data.ok) {
+                document.getElementsByTagName('button')[0].disabled = true;
+            }
+        });
+    }
+</script>
+
+<form>
+    <span>Your email address:</span><input id="email" />
+    <span>Message:</span>
+    <textarea id="message"></textarea>
+    <button type="button" onclick="send()">Send</button>
+    <div id="result"></div>
+</form>
+
+#include "../tail.part"
