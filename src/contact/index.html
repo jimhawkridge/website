@@ -3,6 +3,9 @@
 
 <script>
     function send() {
+        document.getElementsByTagName('button')[0].disabled = true;
+        document.getElementById('result').innerHTML = 'Sending...';
+
         const from = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
@@ -21,8 +24,8 @@
             return response.json();
         }).then((data) => {
             document.getElementById('result').innerHTML = data.message;
-            if (data.ok) {
-                document.getElementsByTagName('button')[0].disabled = true;
+            if (!data.ok) {
+                document.getElementsByTagName('button')[0].disabled = false;
             }
         });
     }
